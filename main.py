@@ -1,7 +1,15 @@
-import requests
-import pandas as pd
+from extract import extract_data
 
-print("🚀 Kobo ETL Pipeline Started")
+def main():
+    print("Starting ETL Pipeline...\n")
 
-print(f"Requests version: {requests.__version__}")
-print(f"Pandas version: {pd.__version__}")
+    df = extract_data()
+
+    print("\nPipeline completed sucessfully")
+
+    print(f"\nRows extracted: {(len(df))}")
+
+    print("\nFirst five records:")
+    print(df.head())
+if __name__ == "__main__":
+    main()
